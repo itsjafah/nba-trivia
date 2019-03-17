@@ -11,6 +11,9 @@ class MainContainer extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
+        <div className="welcome-message">
+          Welcome to the NBA Trivia App!
+        </div>
       </div>
     )
   }
