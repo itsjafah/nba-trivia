@@ -12,6 +12,11 @@ class MainContainer extends Component {
           <img src={court} className='court-image'/>
         </div>
         <NbaLogo />
+        <div className="play-button-div">
+          <button className="play-button">
+            Let's Play!
+          </button>
+        </div>
       </div>
     )
   }
