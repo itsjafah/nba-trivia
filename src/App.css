@@ -1,8 +1,8 @@
-.App {
+.nba-logo-container {
   text-align: center;
 }
 
-.App-logo {
+.nba-logo {
   animation: App-logo-spin infinite 10s linear, fadein 2s;
   height: 30vmin;
   pointer-events: none;
@@ -17,6 +17,7 @@
 .court-image-div {
   display: grid;
   height: 100%;
+  position: absolute;
 }
 
 .court-image {

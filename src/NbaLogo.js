@@ -6,10 +6,10 @@ class NbaLogo extends Component {
 
   render(){
     return (
-      <div >
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+      <div className='nba-logo-container'>
+        <div>
+          <img src={logo} className="nba-logo"/>
+        </div>
         <div className="welcome-message">
           Welcome to the NBA Trivia App!
         </div>
