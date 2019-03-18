@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NbaLogo from './NbaLogo'
-import court from './basketball-court.jpg';
+import court from './basketball-court-copy-2.png';
 const NBA = require("nba");
 
 class MainContainer extends Component {
