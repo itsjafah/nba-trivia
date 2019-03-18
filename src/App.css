@@ -1,4 +1,11 @@
+
+
 /* MAINCONTAINER */
+
+.main-container-div {
+
+}
+
 
 .court-image-div {
 
@@ -15,23 +22,32 @@
 
 .play-button-div {
   text-align: center;
-  margin-top: 45px;
+  margin-top: 30px;
+  animation: 3s ease 0s normal forwards 1 fadein;
   /* border: 1px blue solid; */
 }
 
 .play-button {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
   border-radius: 0.3em;
-  font-size: 48px;
+  font-size: 35px;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
+.play-button:hover {
+  background-color: #e0e0e0;
+  cursor: pointer
+}
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+    0% { opacity:0; }
+    40% { opacity:0; }
+    100% { opacity:1; }
 }
 
 
@@ -42,15 +58,16 @@
 }
 
 .nba-logo {
-  animation: fadein 2s;
+  animation: 0.8s ease 0s normal forwards 1 fadein;
   height: 30vmin;
   pointer-events: none;
 }
 
 .welcome-message {
-  font-size: 30px;
+  margin-top: 10px;
+  font-size: 45px;
   font-weight: bold;
-  animation: fadein 4s;
+  animation: 1.8s ease 0s normal forwards 1 fadein;
 }
 
 @keyframes App-logo-spin {
