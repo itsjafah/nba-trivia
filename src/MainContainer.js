@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import NbaLogo from './NbaLogo'
 import logo from './nba-logo-vector-01.png';
-import './App.css';
+import court from './basketball-court.jpg';
 const NBA = require("nba");
 
 class MainContainer extends Component {
@@ -8,11 +9,8 @@ class MainContainer extends Component {
   render(){
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <div className="welcome-message">
-          Welcome to the NBA Trivia App!
+        <div className='court-image-div'>
+          <img src={court} className='court-image'/>
         </div>
       </div>
     )
