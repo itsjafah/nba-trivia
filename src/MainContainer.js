@@ -39,10 +39,11 @@ class MainContainer extends Component {
         countdownTimer: this.state.countdownTimer - 1
       })
     } else {
-      console.log('hitting countdowntimer !> 1?');
       this.setState({
-        countdownTimerOn: false
+        countdownTimerOn: false,
+        countdownTimer: 0
       }, console.log(this.state.countdownTimer))
+      return
     }
   }
 
@@ -56,6 +57,7 @@ class MainContainer extends Component {
       })
     }
   }
+
 
   render(){
     return (

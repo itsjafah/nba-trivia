@@ -83,3 +83,24 @@
     transform: rotate(360deg);
   }
 }
+
+/* COUNTDOWNTIMER */
+
+.countdown-timer-div {
+  display: grid;
+  place-items: center;
+  position: relative;
+  top: 15vh;
+  /* padding-top: 25%; */
+  /* border: 1px blue solid; */
+}
+
+.countdown-timer {
+  font-size: 200px;
+  font-weight: bold;
+}
+
+.jump-ball {
+  font-size: 150px;
+  font-weight: bold
+}

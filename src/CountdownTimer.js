@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class CountdownTimer extends Component {
 
   componentDidMount(){
+    console.log("inside countdownTimer componentDidMount");
     this.props.decrementCountdownTimer()
   }
 
@@ -14,9 +15,9 @@ class CountdownTimer extends Component {
       <div className="countdown-timer-div">
         { countdownTimerOn
           ?
-        <h1>{countdownTimer}</h1>
+        <div className="countdown-timer">{countdownTimer}</div>
           :
-        <h1>Jump Ball!</h1>
+        <div className="jump-ball">Jump Ball!</div>
         }
       </div>
     )
