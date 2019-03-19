@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NbaLogo from './NbaLogo'
 import PlayButton from './PlayButton'
 import CountdownTimer from './CountdownTimer'
-import QuestionContainer from './QuestionContainer'
+import QuestionModal from './QuestionModal'
 import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
@@ -33,7 +33,7 @@ class MainContainer extends Component {
                 decrementCountdownTimer={this.decrementCountdownTimer} countdownTimer={this.state.countdownTimer}
                 countdownTimerOn={this.state.countdownTimerOn}/>
     } else if (this.state.countdownTimer === 0) {
-      return <QuestionContainer />
+      return <QuestionModal />
     }
   }
 

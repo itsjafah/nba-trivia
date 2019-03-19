@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AnswerChoices from './AnswerChoices';
 
 const Question = () => {
 
@@ -7,7 +6,6 @@ const Question = () => {
     <div className="question-div">
       <div className="question">
         This is where the question will go
-        <AnswerChoices />
       </div>
     </div>
   )
