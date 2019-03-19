@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 class CountdownTimer extends Component {
 
   componentDidMount(){
-    console.log("inside countdownTimer componentDidMount");
     this.props.decrementCountdownTimer()
   }
 
   render(){
-    const { countdownTimer, countdownTimerOn } = this.props
 
+    const { countdownTimer, countdownTimerOn } = this.props
 
     return (
       <div className="countdown-timer-div">

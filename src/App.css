@@ -91,8 +91,6 @@
   place-items: center;
   position: relative;
   top: 15vh;
-  /* padding-top: 25%; */
-  /* border: 1px blue solid; */
 }
 
 .countdown-timer {
@@ -103,4 +101,50 @@
 .jump-ball {
   font-size: 150px;
   font-weight: bold
+}
+
+/* QUESTIONCONTAINER */
+
+.question-container-div {
+  /* display: inline-block;
+  justify-content: center; */
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  position: relative;
+  top: 5vh;
+  border: 1px blue solid;
+ /* Hidden by default
+
+z-index: 1; /* Sit on top */
+
+
+overflow: auto; /* Enable scroll if needed */
+
+}
+
+.question-modal {
+  display: inline-block
+}
+
+
+/* Question */
+
+.question-div {
+
+}
+
+.question {
+
+}
+
+
+/* ANSWERCHOICES */
+
+.answer-choices-div {
+
+}
+
+.answer-choice {
+  
 }
