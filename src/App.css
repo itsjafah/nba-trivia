@@ -106,6 +106,7 @@
 /* QUESTIONCONTAINER */
 
 .question-modal-wrapper {
+  display: flex, inline-grid;
   margin-left: 30%;
   margin-right: 30%;
   position: relative;
@@ -140,15 +141,11 @@ overflow: auto; /* Enable scroll if needed */
 .answer-choices-div {
   display: grid;
   border: 2px green solid;
-  height: 70%
+  height: 68%
 }
 
 .answer-choice {
-
-  position: relative;
-  top: 8vh;
-  padding-top: 5px;
-  padding-bottom: 5px;
   font-size: 20px;
+  border: 1px yellow solid
   /* box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1); */
 }
