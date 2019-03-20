@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-const Question = () => {
+const Question = ( {question} ) => {
+
+  console.log(question);
 
   return (
     <div className="question-div">
       <div className="question">
-        This is where the question will go
+        {question.question}
       </div>
     </div>
   )

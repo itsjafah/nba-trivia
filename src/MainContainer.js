@@ -7,12 +7,43 @@ import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
 
+const QUESTIONS_API = `http://localhost:3000/questions`
+const ANSWERS_API = `http://localhost:3000/answers`
+
 class MainContainer extends Component {
 
   state = {
     playClicked: false,
     countdownTimerOn: false,
     countdownTimer: 3,
+    questions: [],
+    answers: [],
+    activeQuestion: {}
+  }
+
+  componentDidMount(){
+    this.fetchQuestions()
+    this.fetchAnswers()
+  }
+
+  fetchQuestions = () => {
+    fetch(QUESTIONS_API)
+      .then(r => r.json())
+      .then(questions => {
+        this.setState({
+          questions: questions
+        })
+      })
+  }
+
+  fetchAnswers = () => {
+    fetch(ANSWERS_API)
+      .then(r => r.json())
+      .then(answers => {
+        this.setState({
+          answers: answers
+        })
+      })
   }
 
   handlePlayClick = () => {
@@ -33,7 +64,7 @@ class MainContainer extends Component {
                 decrementCountdownTimer={this.decrementCountdownTimer} countdownTimer={this.state.countdownTimer}
                 countdownTimerOn={this.state.countdownTimerOn}/>
     } else if (this.state.countdownTimer === 0) {
-      return <QuestionModal />
+      return <QuestionModal questions={this.state.questions} answers={this.state.answers}/>
     }
   }
 
@@ -46,14 +77,14 @@ class MainContainer extends Component {
       this.setState({
         countdownTimerOn: false,
         countdownTimer: 0
-      }, console.log(this.state.countdownTimer))
+      })
       return
     }
   }
 
   decrementCountdownTimer = () => {
     if (this.state.countdownTimer > 1) {
-      setInterval(()=>{this.handleCountdownTimer()},1000);
+      setInterval(()=>this.handleCountdownTimer(), 1000);
     } else {
       this.setState({
         countdownTimerOn: false,
