@@ -4,19 +4,20 @@ import AnswerChoice from './AnswerChoice';
 
 const QuestionModal = ( {questions, answers} ) => {
 
-  console.log(questions.questions.forEach(question => console.log(question)));
+  console.log(questions);
 
   const filteredAnswers = answers.answers.filter(answer => {
-    return answer.question_id === questions.questions[0].id
+    return answer.question_id === questions.questions.id
   })
 
   const answerChoice = filteredAnswers.map(answerChoice => {
     return <AnswerChoice answerChoice={answerChoice}/>
   })
 
-  const question = questions.questions.map(question => {
+  const question = questions.map(question => {
     return <Question question={question}/>
   })
+
 
     return (
       <div className="question-modal-wrapper">
