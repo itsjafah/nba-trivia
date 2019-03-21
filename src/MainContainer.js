@@ -18,7 +18,9 @@ class MainContainer extends Component {
     countdownTimer: 3,
     questions: [],
     answers: [],
-    activeQuestionIndex: 0
+    activeQuestionIndex: 0,
+    correctAnswers: 0,
+    selectedAnswer: null
   }
 
   componentDidMount(){
@@ -38,7 +40,7 @@ class MainContainer extends Component {
       .then(answers => {
         this.setState({
           answers: answers
-        }, () => console.log(this.state.answers))
+        })
       })
   }
 
@@ -60,15 +62,15 @@ class MainContainer extends Component {
                 decrementCountdownTimer={this.decrementCountdownTimer} countdownTimer={this.state.countdownTimer}
                 countdownTimerOn={this.state.countdownTimerOn}/>
     } else if (this.state.countdownTimer === 0) {
-      return <QuestionModal questions={this.state.questions} answers={this.state.answers} activeQuestionIndex={this.state.activeQuestionIndex} incrementQuestionIndex={this.incrementQuestionIndex}/>
+      return <QuestionModal questions={this.state.questions} answers={this.state.answers} activeQuestionIndex={this.state.activeQuestionIndex} incrementQuestionIndex={this.incrementQuestionIndex} handleSelectedAnswer={this.handleSelectedAnswer} selectedAnswer={this.state.selectedAnswer}/>
     }
   }
 
   handleCountdownTimer = () => {
     if (this.state.countdownTimer > 1) {
-      this.setState({
-        countdownTimer: this.state.countdownTimer - 1
-      })
+      this.setState(prevState => ({
+        countdownTimer: prevState.countdownTimer - 1
+      }))
     } else {
       this.setState({
         countdownTimerOn: false,
@@ -109,6 +111,19 @@ class MainContainer extends Component {
       this.setState(prevState => ({
         activeQuestionIndex: prevState.activeQuestionIndex+1
       }))
+    }
+  }
+
+  handleSelectedAnswer = (selectedAnswer) => {
+    if (selectedAnswer.correct === true) {
+      this.setState(prevState => ({
+        correctAnswers: prevState.correctAnswers+1,
+        selectedAnswer: this.state.selectedAnswer
+      }))
+    } else {
+      this.setState({
+        selectedAnswer: this.state.selectedAnswer
+      })
     }
   }
 
