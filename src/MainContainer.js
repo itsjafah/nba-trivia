@@ -31,7 +31,7 @@ class MainContainer extends Component {
   fetchQuestions = () => {
     fetch(QUESTIONS_API)
       .then(r => r.json())
-      .then(questions => {this.selectRandomQuestions(questions.questions, 2)})
+      .then(questions => {this.selectRandomQuestions(questions.questions, 5)})
   }
 
   fetchAnswers = () => {
@@ -51,45 +51,19 @@ class MainContainer extends Component {
     })
   }
 
-  renderContent = () => {
-    if (this.state.playClicked === false) {
-      return <>
-        <NbaLogo playClicked={this.state.playClicked}/>
-        <PlayButton handlePlayClick={this.handlePlayClick}/>
-      </>
-    } else if (this.state.playClicked === true && this.state.countdownTimerOn === true) {
-      return <CountdownTimer
-                decrementCountdownTimer={this.decrementCountdownTimer} countdownTimer={this.state.countdownTimer}
-                countdownTimerOn={this.state.countdownTimerOn}/>
-    } else if (this.state.countdownTimer === 0) {
-      return <QuestionModal questions={this.state.questions} answers={this.state.answers} activeQuestionIndex={this.state.activeQuestionIndex} incrementQuestionIndex={this.incrementQuestionIndex} handleSelectedAnswer={this.handleSelectedAnswer} selectedAnswer={this.state.selectedAnswer}/>
-    }
-  }
-
   handleCountdownTimer = () => {
-    if (this.state.countdownTimer > 1) {
+    if (this.state.countdownTimer > 0) {
       this.setState(prevState => ({
         countdownTimer: prevState.countdownTimer - 1
       }))
     } else {
       this.setState({
         countdownTimerOn: false,
-        countdownTimer: 0
+        // countdownTimer: 0
       })
-      return
     }
   }
 
-  decrementCountdownTimer = () => {
-    if (this.state.countdownTimer > 1) {
-      setInterval(()=>this.handleCountdownTimer(), 1000);
-    } else {
-      this.setState({
-        countdownTimerOn: false,
-        countdownTimer: 0
-      })
-    }
-  }
 
   selectRandomQuestions = (arr, n) => {
     var result = new Array(n),
@@ -118,12 +92,35 @@ class MainContainer extends Component {
     if (selectedAnswer.correct === true) {
       this.setState(prevState => ({
         correctAnswers: prevState.correctAnswers+1,
-        selectedAnswer: this.state.selectedAnswer
+        selectedAnswer: selectedAnswer
       }))
     } else {
       this.setState({
         selectedAnswer: this.state.selectedAnswer
       })
+    }
+  }
+
+
+  renderContent = () => {
+    if (this.state.playClicked === false) {
+      return <>
+        <NbaLogo playClicked={this.state.playClicked}/>
+        <PlayButton handlePlayClick={this.handlePlayClick}/>
+      </>
+    } else if (this.state.playClicked === true && this.state.countdownTimerOn === true) {
+      return <CountdownTimer
+        handleCountdownTimer={this.handleCountdownTimer}
+        countdownTimer={this.state.countdownTimer}
+        countdownTimerOn={this.state.countdownTimerOn}/>
+    } else if (this.state.countdownTimerOn === false) {
+      return <QuestionModal
+        questions={this.state.questions}
+        answers={this.state.answers}
+        activeQuestionIndex={this.state.activeQuestionIndex}
+        incrementQuestionIndex={this.incrementQuestionIndex}
+        handleSelectedAnswer={this.handleSelectedAnswer}
+        selectedAnswer={this.state.selectedAnswer}/>
     }
   }
 

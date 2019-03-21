@@ -4,23 +4,23 @@ const AnswerChoice = ( {answerChoice, incrementQuestionIndex, handleSelectedAnsw
 
   console.log(selectedAnswer);
 
-  const className = () => {
-    if (selectedAnswer === null) {
-      return "answer-choice-button"
-    } else if (selectedAnswer.correct === true) {
-      return "correct-answer-choice-button"
-    } else if (selectedAnswer.correct === false) {
-      return "incorrect-answer-choice-button"
-    }
-  }
+  // const className = () => {
+  //   if (selectedAnswer === null) {
+  //     return "answer-choice-button"
+  //   } else if (selectedAnswer.correct === true) {
+  //     return "correct-answer-choice-button"
+  //   } else if (selectedAnswer.correct === false) {
+  //     return "incorrect-answer-choice-button"
+  //   }
+  // }
 
-  console.log(className());
+  // console.log(className);
 
     return (
       <div className="answer-choices-div">
         <button
-          className={className()}
-          onClick={() => {incrementQuestionIndex(); handleSelectedAnswer(answerChoice)}}>{answerChoice.answer}
+          className="answer-choice-button"
+          onClick={() => {setTimeout(function(){incrementQuestionIndex()}, 2500); handleSelectedAnswer(answerChoice)}}>{answerChoice.answer}
         </button>
       </div>
     )

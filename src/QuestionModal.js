@@ -9,7 +9,11 @@ const QuestionModal = ( {questions, answers, activeQuestionIndex, incrementQuest
   })
 
   const answerChoice = filteredAnswers.map(answerChoice => {
-    return <AnswerChoice answerChoice={answerChoice} incrementQuestionIndex={incrementQuestionIndex} handleSelectedAnswer={handleSelectedAnswer} selectedAnswer={selectedAnswer}/>
+    return <AnswerChoice
+      answerChoice={answerChoice}
+      incrementQuestionIndex={incrementQuestionIndex}
+      handleSelectedAnswer={handleSelectedAnswer}
+      selectedAnswer={selectedAnswer}/>
   })
 
   const question = questions[activeQuestionIndex]

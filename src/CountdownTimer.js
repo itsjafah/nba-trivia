@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 
 class CountdownTimer extends Component {
 
+  intervalID = 0;
+
   componentDidMount(){
-    this.props.decrementCountdownTimer()
+    this.intervalID = setInterval(this.props.handleCountdownTimer, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
   }
 
   render(){
@@ -12,7 +18,7 @@ class CountdownTimer extends Component {
 
     return (
       <div className="countdown-timer-div">
-        { countdownTimerOn
+        { countdownTimer > 0 
           ?
         <div className="countdown-timer">{countdownTimer}</div>
           :

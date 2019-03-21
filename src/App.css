@@ -112,7 +112,7 @@
   position: relative;
   top: 5vh;
   height: 45vh;
-  border: 5px grey solid;
+  border: 2px grey solid;
   border-radius: 0.3em;
   z-index: 1; /* Sit on top
 
@@ -165,4 +165,17 @@ overflow: auto; /* Enable scroll if needed */
 
 .answer-choice-button:active {
   transform: translateY(2px);
+}
+
+.correct-answer-choice-button:active {
+  font-size: 15px;
+  box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
+  background-color: #4CAF50;
+  border-radius: 0.3em;
+  margin-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  outline: 0
 }
