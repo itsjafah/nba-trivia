@@ -18,7 +18,7 @@ class MainContainer extends Component {
     countdownTimer: 3,
     questions: [],
     answers: [],
-    activeQuestion: {}
+    activeQuestionIndex: 0
   }
 
   componentDidMount(){
@@ -60,7 +60,7 @@ class MainContainer extends Component {
                 decrementCountdownTimer={this.decrementCountdownTimer} countdownTimer={this.state.countdownTimer}
                 countdownTimerOn={this.state.countdownTimerOn}/>
     } else if (this.state.countdownTimer === 0) {
-      return <QuestionModal questions={this.state.questions} answers={this.state.answers}/>
+      return <QuestionModal questions={this.state.questions} answers={this.state.answers} activeQuestionIndex={this.state.activeQuestionIndex} incrementQuestionIndex={this.incrementQuestionIndex}/>
     }
   }
 
@@ -102,8 +102,15 @@ class MainContainer extends Component {
     }
     this.setState({questions: result})
     return result;
-}
+  }
 
+  incrementQuestionIndex = () => {
+    if (this.state.activeQuestionIndex < 9){
+      this.setState(prevState => ({
+        activeQuestionIndex: prevState.activeQuestionIndex+1
+      }))
+    }
+  }
 
 
   render(){
