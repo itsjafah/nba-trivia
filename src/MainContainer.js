@@ -4,6 +4,7 @@ import PlayButton from './PlayButton'
 import CountdownTimer from './CountdownTimer'
 import QuestionModal from './QuestionModal'
 import Scoreboard from './Scoreboard'
+import QuestionTimer from './QuestionTimer'
 import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
@@ -21,7 +22,9 @@ class MainContainer extends Component {
     answers: [],
     activeQuestionIndex: 0,
     correctAnswers: 0,
-    selectedAnswer: null
+    selectedAnswer: null,
+    questionTimer: 24,
+    questionTimerOn: false
   }
 
   componentDidMount(){
@@ -64,6 +67,19 @@ class MainContainer extends Component {
     }
   }
 
+  handleQuestionTimer = () => {
+    if (this.state.questionTimer > 0) {
+      this.setState(prevState => ({
+        questionTimer: prevState.questionTimer - 1
+      }))
+    } else {
+      this.incrementQuestionIndex()
+      this.setState({
+        questionTimer: 24
+      })
+    }
+  }
+
 
   selectRandomQuestions = (arr, n) => {
     var result = new Array(n),
@@ -83,7 +99,8 @@ class MainContainer extends Component {
   incrementQuestionIndex = () => {
     if (this.state.activeQuestionIndex < 9){
       this.setState(prevState => ({
-        activeQuestionIndex: prevState.activeQuestionIndex+1
+        activeQuestionIndex: prevState.activeQuestionIndex+1,
+        questionTimer: 24
       }))
     }
   }
@@ -116,13 +133,15 @@ class MainContainer extends Component {
     } else if (this.state.countdownTimerOn === false) {
       return <>
         <Scoreboard correctAnswers={this.state.correctAnswers}/>
+        <QuestionTimer handleQuestionTimer={this.handleQuestionTimer} questionTimer={this.state.questionTimer}/>
         <QuestionModal
           questions={this.state.questions}
           answers={this.state.answers}
           activeQuestionIndex={this.state.activeQuestionIndex}
           incrementQuestionIndex={this.incrementQuestionIndex}
           handleSelectedAnswer={this.handleSelectedAnswer}
-          selectedAnswer={this.state.selectedAnswer}/>
+          selectedAnswer={this.state.selectedAnswer}
+          questionTimer={this.state.questionTimer}/>
       </>
     }
   }
