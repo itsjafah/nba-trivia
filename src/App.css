@@ -3,7 +3,10 @@
 /* MAINCONTAINER */
 
 .main-container-div {
-
+  /* display: grid; */
+  position: relative;
+  top: 3vh;
+  /* border: 2px blue solid; */
 }
 
 
@@ -106,16 +109,16 @@
 /* QUESTIONCONTAINER */
 
 .question-modal-wrapper {
-  display: flex, inline-grid;
+  /* display: flex, inline-grid; */
+  text-align: center;
   margin-left: 30%;
   margin-right: 30%;
   position: relative;
-  top: 5vh;
+  top: 2vh;
   height: 45vh;
   border: 2px grey solid;
   border-radius: 0.3em;
-  z-index: 1; /* Sit on top
-
+  z-index: 1;
 
 overflow: auto; /* Enable scroll if needed */
 
@@ -141,7 +144,7 @@ overflow: auto; /* Enable scroll if needed */
 .answer-choices-div {
   display: grid;
   position: relative;
-  top: 150px
+  top: 160px
   /* border: 2px green solid; */
 }
 
@@ -178,4 +181,28 @@ overflow: auto; /* Enable scroll if needed */
   margin-left: 50px;
   margin-right: 50px;
   outline: 0
+}
+
+
+/* SCOREBOARD */
+
+.scoreboard-div {
+  float: left;
+  margin-top: 30px;
+  margin-left: 180px;
+  /* border: 2px green solid; */
+}
+
+.your-score-header {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex
+}
+
+.your-score {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  animation: 0.8s ease 0s normal forwards 1 fadein;
 }

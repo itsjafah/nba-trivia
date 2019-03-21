@@ -3,6 +3,7 @@ import NbaLogo from './NbaLogo'
 import PlayButton from './PlayButton'
 import CountdownTimer from './CountdownTimer'
 import QuestionModal from './QuestionModal'
+import Scoreboard from './Scoreboard'
 import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
@@ -59,7 +60,6 @@ class MainContainer extends Component {
     } else {
       this.setState({
         countdownTimerOn: false,
-        // countdownTimer: 0
       })
     }
   }
@@ -96,7 +96,7 @@ class MainContainer extends Component {
       }))
     } else {
       this.setState({
-        selectedAnswer: this.state.selectedAnswer
+        selectedAnswer: selectedAnswer
       })
     }
   }
@@ -114,24 +114,29 @@ class MainContainer extends Component {
         countdownTimer={this.state.countdownTimer}
         countdownTimerOn={this.state.countdownTimerOn}/>
     } else if (this.state.countdownTimerOn === false) {
-      return <QuestionModal
-        questions={this.state.questions}
-        answers={this.state.answers}
-        activeQuestionIndex={this.state.activeQuestionIndex}
-        incrementQuestionIndex={this.incrementQuestionIndex}
-        handleSelectedAnswer={this.handleSelectedAnswer}
-        selectedAnswer={this.state.selectedAnswer}/>
+      return <>
+        <Scoreboard correctAnswers={this.state.correctAnswers}/>
+        <QuestionModal
+          questions={this.state.questions}
+          answers={this.state.answers}
+          activeQuestionIndex={this.state.activeQuestionIndex}
+          incrementQuestionIndex={this.incrementQuestionIndex}
+          handleSelectedAnswer={this.handleSelectedAnswer}
+          selectedAnswer={this.state.selectedAnswer}/>
+      </>
     }
   }
 
 
   render(){
     return (
-      <div className="main-container-div">
+      <div>
         <div className='court-image-div'>
           <img src={court} className='court-image'/>
         </div>
-        {this.renderContent()}
+        <div className="main-container-div">
+          {this.renderContent()}
+        </div>
       </div>
     )
   }
