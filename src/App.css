@@ -249,3 +249,12 @@ overflow: auto; /* Enable scroll if needed */
   animation: 0.8s ease 0s normal forwards 1 fadein;
   color: red
 }
+
+
+/* GameOver */
+
+.game-over-header {
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+}

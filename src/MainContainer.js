@@ -5,6 +5,7 @@ import CountdownTimer from './CountdownTimer'
 import QuestionModal from './QuestionModal'
 import Scoreboard from './Scoreboard'
 import QuestionTimer from './QuestionTimer'
+import GameOver from './GameOver'
 import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
@@ -24,7 +25,7 @@ class MainContainer extends Component {
     correctAnswers: 0,
     selectedAnswer: null,
     questionTimer: 24,
-    questionTimerOn: false
+    gameOver: false
   }
 
   componentDidMount(){
@@ -97,11 +98,15 @@ class MainContainer extends Component {
   }
 
   incrementQuestionIndex = () => {
-    if (this.state.activeQuestionIndex < 9){
+    if (this.state.activeQuestionIndex < 4){
       this.setState(prevState => ({
         activeQuestionIndex: prevState.activeQuestionIndex+1,
         questionTimer: 24
       }))
+    } else {
+      this.setState({
+        gameOver: true
+      })
     }
   }
 
@@ -130,7 +135,7 @@ class MainContainer extends Component {
         handleCountdownTimer={this.handleCountdownTimer}
         countdownTimer={this.state.countdownTimer}
         countdownTimerOn={this.state.countdownTimerOn}/>
-    } else if (this.state.countdownTimerOn === false) {
+    } else if (this.state.countdownTimerOn === false && this.state.gameOver === false) {
       return <>
         <Scoreboard correctAnswers={this.state.correctAnswers}/>
         <QuestionTimer handleQuestionTimer={this.handleQuestionTimer} questionTimer={this.state.questionTimer}/>
@@ -143,6 +148,8 @@ class MainContainer extends Component {
           selectedAnswer={this.state.selectedAnswer}
           questionTimer={this.state.questionTimer}/>
       </>
+    } else if (this.state.gameOver === true) {
+      return <GameOver correctAnswers={this.state.correctAnswers}/>
     }
   }
 
