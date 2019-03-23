@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
-const GameOver = ({correctAnswers}) => {
+const GameOver = ({ correctAnswers, handlePlayClick }) => {
 
   return (
     <div className="game-over-div">
       <div className="game-over-header">
-        You scored {correctAnswers}/5!
+        You shot {(correctAnswers/5) * 100}%!
+      </div>
+      <div className="play-again-div">
+        <button className="play-again-button" onClick={handlePlayClick}>Play Again?</button>
       </div>
     </div>
   )

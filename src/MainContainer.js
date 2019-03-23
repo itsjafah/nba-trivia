@@ -50,9 +50,17 @@ class MainContainer extends Component {
   }
 
   handlePlayClick = () => {
+    this.fetchQuestions()
+    this.fetchAnswers()
     this.setState({
       playClicked: true,
-      countdownTimerOn: true
+      countdownTimerOn: true,
+      countdownTimer: 3,
+      gameOver: false,
+      activeQuestionIndex: 0,
+      correctAnswers: 0,
+      selectedAnswer: null,
+      questionTimer: 24,
     })
   }
 
@@ -124,6 +132,8 @@ class MainContainer extends Component {
   }
 
 
+
+
   renderContent = () => {
     if (this.state.playClicked === false) {
       return <>
@@ -149,7 +159,7 @@ class MainContainer extends Component {
           questionTimer={this.state.questionTimer}/>
       </>
     } else if (this.state.gameOver === true) {
-      return <GameOver correctAnswers={this.state.correctAnswers}/>
+      return <GameOver correctAnswers={this.state.correctAnswers} handlePlayClick={this.handlePlayClick}/>
     }
   }
 

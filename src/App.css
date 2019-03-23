@@ -3,16 +3,11 @@
 /* MAINCONTAINER */
 
 .main-container-div {
-  /* display: grid; */
   position: relative;
   top: 3vh;
   /* border: 2px blue solid; */
 }
 
-
-.court-image-div {
-
-}
 
 .court-image {
   width: 100%;
@@ -130,12 +125,12 @@ overflow: auto; /* Enable scroll if needed */
 .question-div {
   text-align: center;
   position: relative;
-  top: 60px
+  top: 50px
   /* border: 2px red solid; */
 }
 
 .question {
-  font-size: 25px
+  font-size: 35px
 }
 
 
@@ -144,12 +139,12 @@ overflow: auto; /* Enable scroll if needed */
 .answer-choices-div {
   display: grid;
   position: relative;
-  top: 160px
+  top: 80px
   /* border: 2px green solid; */
 }
 
 .answer-choice-button {
-  font-size: 15px;
+  font-size: 25px;
   box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
   border-radius: 0.3em;
   margin-top: 5px;
@@ -171,7 +166,7 @@ overflow: auto; /* Enable scroll if needed */
 }
 
 .correct-answer-choice-button {
-  font-size: 15px;
+  font-size: 25px;
   box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
   background-color: #4CAF50;
   border-radius: 0.3em;
@@ -184,7 +179,7 @@ overflow: auto; /* Enable scroll if needed */
 }
 
 .incorrect-answer-choice-button {
-  font-size: 15px;
+  font-size: 25px;
   box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
   background-color: red;
   border-radius: 0.3em;
@@ -253,8 +248,35 @@ overflow: auto; /* Enable scroll if needed */
 
 /* GameOver */
 
+.game-over-div {
+  position: relative;
+  top: 12vh;
+  text-align: center;
+}
+
 .game-over-header {
   font-size: 100px;
   font-weight: bold;
   text-align: center;
+}
+
+.play-again-button {
+  box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
+  border-radius: 0.3em;
+  font-size: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 70px;
+  outline:0;
+}
+
+.play-again-button:hover {
+  background-color: #e0e0e0;
+  cursor: pointer
+}
+
+.play-again-button:active {
+  transform: translateY(2px);
 }
