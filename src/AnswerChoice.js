@@ -29,12 +29,10 @@ const AnswerChoice = ( {answerChoice, incrementQuestionIndex, handleSelectedAnsw
   // console.log(className);
 
     return (
-      <div className="answer-choices-div">
         <button
           className={className()}
           onClick={() => {setTimeout(function(){incrementQuestionIndex()}, 2500); handleSelectedAnswer(answerChoice)}}>{answerChoice.answer}
         </button>
-      </div>
     )
 
 }

@@ -6,6 +6,7 @@ import QuestionModal from './QuestionModal'
 import Scoreboard from './Scoreboard'
 import QuestionTimer from './QuestionTimer'
 import GameOver from './GameOver'
+import QuestionCounter from './QuestionCounter'
 import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
@@ -157,6 +158,7 @@ class MainContainer extends Component {
           handleSelectedAnswer={this.handleSelectedAnswer}
           selectedAnswer={this.state.selectedAnswer}
           questionTimer={this.state.questionTimer}/>
+        <QuestionCounter activeQuestionIndex={this.state.activeQuestionIndex} questions={this.state.questions}/>
       </>
     } else if (this.state.gameOver === true) {
       return <GameOver correctAnswers={this.state.correctAnswers} handlePlayClick={this.handlePlayClick}/>

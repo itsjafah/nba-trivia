@@ -110,12 +110,10 @@
   margin-right: 30%;
   position: relative;
   top: 2vh;
-  height: 45vh;
+  height: 100%;
   border: 2px grey solid;
   border-radius: 0.3em;
   z-index: 1;
-
-overflow: auto; /* Enable scroll if needed */
 
 }
 
@@ -125,8 +123,11 @@ overflow: auto; /* Enable scroll if needed */
 .question-div {
   text-align: center;
   position: relative;
-  top: 50px
-  /* border: 2px red solid; */
+  /* top: 40px; */
+  height: 30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px red solid;
 }
 
 .question {
@@ -139,8 +140,10 @@ overflow: auto; /* Enable scroll if needed */
 .answer-choices-div {
   display: grid;
   position: relative;
-  top: 80px
-  /* border: 2px green solid; */
+  height: 70%;
+  border: 2px green solid;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .answer-choice-button {
@@ -233,6 +236,7 @@ overflow: auto; /* Enable scroll if needed */
 .question-timer {
   font-size: 40px;
   font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
   animation: 0.8s ease 0s normal forwards 1 fadein;
 }
@@ -240,9 +244,25 @@ overflow: auto; /* Enable scroll if needed */
 .question-timer-low {
   font-size: 40px;
   font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
   animation: 0.8s ease 0s normal forwards 1 fadein;
   color: red
+}
+
+/* @font-face {
+  font-family: 'digital-7';
+  src: url('../fonts/digital-7.ttf');
+} */
+
+/* QuestionCounter */
+
+.question-counter {
+  border: 1px red solid;
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  top: 4vh
 }
 
 
