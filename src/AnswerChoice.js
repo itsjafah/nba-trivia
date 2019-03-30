@@ -5,28 +5,14 @@ const AnswerChoice = ( {answerChoice, incrementQuestionIndex, handleSelectedAnsw
   console.log("answer choice is", answerChoice, "selectedAnswer is:", selectedAnswer);
 
   const className = () => {
-    if (selectedAnswer === null || selectedAnswer.id !== answerChoice.id) {
+    if (selectedAnswer === null || (selectedAnswer.id !== answerChoice.id && answerChoice.correct === false)) {
       return "answer-choice-button"
-    } if (selectedAnswer.id !== answerChoice.id && answerChoice.correct === true) {
+    } else if (selectedAnswer && answerChoice.correct === true) {
       return "correct-answer-choice-button"
-    } if (selectedAnswer && answerChoice.correct === true) {
-      return "correct-answer-choice-button"
-    } if (selectedAnswer.correct === false) {
+    } else if (selectedAnswer.correct === false) {
       return "incorrect-answer-choice-button"
     }
   }
-  //
-  // const className = () => {
-  //   if (selectedAnswer === null || ) {
-  //     return "answer-choice-button"
-  //   } if (answerChoice.correct === true) {
-  //     return "correct-answer-choice-button"
-  //   } if (selectedAnswer.correct === false) {
-  //     return "incorrect-answer-choice-button"
-  //   }
-  // }
-
-  // console.log(className);
 
     return (
         <button

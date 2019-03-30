@@ -110,7 +110,8 @@ class MainContainer extends Component {
     if (this.state.activeQuestionIndex < 4){
       this.setState(prevState => ({
         activeQuestionIndex: prevState.activeQuestionIndex+1,
-        questionTimer: 24
+        questionTimer: 24,
+        selectedAnswer: null
       }))
     } else {
       this.setState({
