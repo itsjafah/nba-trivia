@@ -102,7 +102,6 @@
   margin-right: 30%;
   position: relative;
   top: 2vh;
-  /* height: 100%; */
   border: 2px grey solid;
   border-radius: 0.3em;
   z-index: 1;
@@ -112,18 +111,15 @@
 
 /* Question */
 
-.question-div {
-  text-align: center;
-  position: relative;
-  /* top: 40px; */
-  height: 30%;
+.question {
+  /* border: 1px black solid; */
+  height: 80px;
+  font-size: 35px;
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 2px red solid;
-}
-
-.question {
-  font-size: 35px
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -133,9 +129,8 @@
   display: grid;
   position: relative;
   height: 70%;
-  border: 2px green solid;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 40px
+  /* border: 2px green solid; */
 }
 
 .answer-choice-button {
@@ -172,12 +167,12 @@
   margin-right: 50px;
   outline: 0;
   animation: blinker 0.4s linear infinite;
-  animation-delay: 0.4s 
+  animation-delay: 0.4s
 }
 
 @keyframes blinker {
   50% {
-    opacity: 0.6;
+    opacity: 1;
     background-color: green
   }
 }

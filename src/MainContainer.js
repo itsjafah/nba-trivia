@@ -36,8 +36,8 @@ class MainContainer extends Component {
 
   fetchQuestions = () => {
     fetch(QUESTIONS_API)
-      .then(r => r.json())
-      .then(questions => {this.selectRandomQuestions(questions.questions, 5)})
+      .then(r => console.log(r.json()))
+      // .then(questions => {this.selectRandomQuestions(questions.questions, 5)})
   }
 
   fetchAnswers = () => {

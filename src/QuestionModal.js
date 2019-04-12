@@ -21,9 +21,7 @@ const QuestionModal = ( {questions, answers, activeQuestionIndex, incrementQuest
 
     return (
       <div className="question-modal-wrapper">
-        <div className="question-div">
           <Question question={question}/>
-        </div>
         <div className="answer-choices-div">
           {answerChoice}
         </div>
