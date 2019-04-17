@@ -158,7 +158,6 @@
 .correct-answer-choice-button {
   font-size: 25px;
   box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
-  /* background-color: #4CAF50; */
   border-radius: 0.3em;
   margin-top: 5px;
   padding-top: 10px;
@@ -166,8 +165,21 @@
   margin-left: 50px;
   margin-right: 50px;
   outline: 0;
-  animation: blinker 0.4s linear infinite;
-  animation-delay: 0.4s
+  animation: blinker 0.6s linear infinite;
+  animation-delay: 0.2s
+}
+
+.correct-answer-choice-button-selected {
+  font-size: 25px;
+  box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
+  background-color: #4caf50;
+  border-radius: 0.3em;
+  margin-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  outline: 0;
 }
 
 @keyframes blinker {
@@ -246,15 +258,10 @@
   color: red
 }
 
-/* @font-face {
-  font-family: 'digital-7';
-  src: url('../fonts/digital-7.ttf');
-} */
 
 /* QuestionCounter */
 
 .question-counter {
-  border: 1px red solid;
   position: relative;
   display: inline-block;
   left: 50%;
