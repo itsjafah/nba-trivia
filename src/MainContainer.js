@@ -11,8 +11,8 @@ import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
 
-const QUESTIONS_API = `http://localhost:3000/questions`
-const ANSWERS_API = `http://localhost:3000/answers`
+const QUESTIONS_API = `https://whispering-reef-74520.herokuapp.com/questions`
+const ANSWERS_API = `https://whispering-reef-74520.herokuapp.com/answers`
 
 class MainContainer extends Component {
 
