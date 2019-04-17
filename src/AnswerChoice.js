@@ -17,7 +17,7 @@ const AnswerChoice = ( {answerChoice, incrementQuestionIndex, handleSelectedAnsw
     return (
         <button
           className={className()}
-          onClick={() => {setTimeout(function(){incrementQuestionIndex()}, 2500); handleSelectedAnswer(answerChoice)}}>{answerChoice.answer}
+          onClick={ selectedAnswer === null ? () => {setTimeout(function(){incrementQuestionIndex()}, 2500); handleSelectedAnswer(answerChoice)} : null}>{answerChoice.answer}
         </button>
     )
 
