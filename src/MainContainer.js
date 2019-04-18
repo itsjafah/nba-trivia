@@ -11,6 +11,7 @@ import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
 
+
 const QUESTIONS_API = `https://whispering-reef-74520.herokuapp.com/questions`
 const ANSWERS_API = `https://whispering-reef-74520.herokuapp.com/answers`
 
@@ -37,7 +38,7 @@ class MainContainer extends Component {
   fetchQuestions = () => {
     fetch(QUESTIONS_API)
       .then(r => r.json())
-      .then(questions => {this.selectRandomQuestions(questions.questions, 5)})
+      .then(questions => {this.selectRandomQuestions(questions.questions, 10)})
   }
 
   fetchAnswers = () => {
@@ -107,7 +108,7 @@ class MainContainer extends Component {
   }
 
   incrementQuestionIndex = () => {
-    if (this.state.activeQuestionIndex < 4){
+    if (this.state.activeQuestionIndex < 9){
       this.setState(prevState => ({
         activeQuestionIndex: prevState.activeQuestionIndex+1,
         questionTimer: 24,
