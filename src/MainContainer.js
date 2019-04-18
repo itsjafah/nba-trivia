@@ -38,7 +38,7 @@ class MainContainer extends Component {
   fetchQuestions = () => {
     fetch(QUESTIONS_API)
       .then(r => r.json())
-      .then(questions => {this.selectRandomQuestions(questions.questions, 5)})
+      .then(questions => {this.selectRandomQuestions(questions.questions, 10)})
   }
 
   fetchAnswers = () => {
@@ -108,7 +108,7 @@ class MainContainer extends Component {
   }
 
   incrementQuestionIndex = () => {
-    if (this.state.activeQuestionIndex < 4){
+    if (this.state.activeQuestionIndex < 9){
       this.setState(prevState => ({
         activeQuestionIndex: prevState.activeQuestionIndex+1,
         questionTimer: 24,
