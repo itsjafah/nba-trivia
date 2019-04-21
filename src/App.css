@@ -81,16 +81,16 @@
   display: grid;
   place-items: center;
   position: relative;
-  top: 15vh;
+  top: 10vh;
 }
 
 .countdown-timer {
-  font-size: 200px;
+  font-size: 150px;
   font-weight: bold;
 }
 
 .jump-ball {
-  font-size: 150px;
+  font-size: 100px;
   font-weight: bold
 }
 
@@ -282,7 +282,7 @@
 }
 
 .game-over-header {
-  font-size: 100px;
+  font-size: 65px;
   font-weight: bold;
   text-align: center;
 }
@@ -290,12 +290,12 @@
 .play-again-button {
   box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
   border-radius: 0.3em;
-  font-size: 35px;
-  padding-left: 50px;
-  padding-right: 50px;
+  font-size: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 70px;
+  margin-top: 55px;
   outline:0;
 }
 
