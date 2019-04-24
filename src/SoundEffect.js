@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
+import Sound from 'react-sound'
 
 class SoundEffect extends Component {
 
-  renderContent = () => {
-    if ()
-    <Sound
-       url="cool_sound.mp3"
-       playStatus={Sound.status.PLAYING}
-       playFromPosition={300 /* in milliseconds */}
-       onLoading={this.handleSongLoading}
-       onPlaying={this.handleSongPlaying}
-       onFinishedPlaying={this.handleSongFinishedPlaying}
-    />
+  url = () => {
+    if (this.props.playClicked === false) {
+      return "welcome-crowd.mp3"
+    } else if (this.props.playClicked === true && this.props.selectedAnswer === null){
+      return null
+    } else if (this.props.selectedAnswer.correct === true){
+      return "cheers-correct-answer.mp3"
+    }
   }
 
   render(){
+    console.log(this.props);
+
     return (
-      {this.renderContent()}
+      <Sound
+        url={this.url()}
+        playStatus={Sound.status.PLAYING}
+        playFromPosition={1000 /* in milliseconds */}
+        onLoading={this.handleSongLoading}
+        onPlaying={this.handleSongPlaying}
+        onFinishedPlaying={this.handleSongFinishedPlaying}
+      />
     )
 
   }

@@ -7,6 +7,7 @@ import Scoreboard from './Scoreboard'
 import QuestionTimer from './QuestionTimer'
 import GameOver from './GameOver'
 import QuestionCounter from './QuestionCounter'
+import SoundEffect from './SoundEffect';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
 
@@ -175,6 +176,7 @@ class MainContainer extends Component {
     return (
       <div className="main-container-div">
         {this.renderContent()}
+        <SoundEffect selectedAnswer={this.state.selectedAnswer} playClicked={this.state.playClicked}/>
       </div>
     )
   }
