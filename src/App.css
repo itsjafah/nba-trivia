@@ -1,21 +1,38 @@
+/* APP */
 
+.app {
+  /* height: 100vh; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.app::after {
+  content: "";
+  background: url("./basketball-court-copy-2.png");
+
+  position: absolute;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 /* MAINCONTAINER */
 
 .main-container-div {
-  position: relative;
-  top: 3vh;
-  min-width: 1080px;
-}
-
-
-.court-image {
+  /* position: relative; */
+  /* top: 3vh; */
+  margin-top: 2vh;
   width: 100%;
-  max-height: 100vh;
-  margin: auto;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-  position: absolute;
-  z-index: -1;
+  border: 1px red solid
 }
 
 .play-button-div {

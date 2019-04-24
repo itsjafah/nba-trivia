@@ -7,13 +7,16 @@ import Scoreboard from './Scoreboard'
 import QuestionTimer from './QuestionTimer'
 import GameOver from './GameOver'
 import QuestionCounter from './QuestionCounter'
-import court from './basketball-court-copy-2.png';
 import logo from './nba-logo-vector-01.png';
 const NBA = require("nba");
 
 
-const QUESTIONS_API = `https://whispering-reef-74520.herokuapp.com/questions`
-const ANSWERS_API = `https://whispering-reef-74520.herokuapp.com/answers`
+// const QUESTIONS_API = `https://whispering-reef-74520.herokuapp.com/questions`
+// const ANSWERS_API = `https://whispering-reef-74520.herokuapp.com/answers`
+
+
+const QUESTIONS_API = `http://localhost:3000/questions`
+const ANSWERS_API = `http://localhost:3000/answers`
 
 class MainContainer extends Component {
 
@@ -170,13 +173,8 @@ class MainContainer extends Component {
 
   render(){
     return (
-      <div>
-        <div className='court-image-div'>
-          <img src={court} className='court-image'/>
-        </div>
-        <div className="main-container-div">
-          {this.renderContent()}
-        </div>
+      <div className="main-container-div">
+        {this.renderContent()}
       </div>
     )
   }
