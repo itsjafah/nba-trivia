@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const AnswerChoice = ( {answerChoice, incrementQuestionIndex, handleSelectedAnswer, selectedAnswer} ) => {
+const AnswerChoice = ( {answerChoice, incrementQuestionIndex, handleSelectedAnswer, selectedAnswer, questionTimerOn } ) => {
 
   const className = () => {
     if (selectedAnswer === null || (selectedAnswer.id !== answerChoice.id && answerChoice.correct === false)) {
@@ -17,7 +17,7 @@ const AnswerChoice = ( {answerChoice, incrementQuestionIndex, handleSelectedAnsw
     return (
         <button
           className={className()}
-          onClick={ selectedAnswer === null ? () => {setTimeout(function(){incrementQuestionIndex()}, 2500); handleSelectedAnswer(answerChoice)} : null}>{answerChoice.answer}
+          onClick={ selectedAnswer === null && questionTimerOn !== false ? () => {setTimeout(function(){incrementQuestionIndex()}, 2500); handleSelectedAnswer(answerChoice)} : null }>{answerChoice.answer}
         </button>
     )
 

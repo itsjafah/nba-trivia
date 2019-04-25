@@ -30,13 +30,8 @@ class MainContainer extends Component {
     activeQuestionIndex: 0,
     correctAnswers: 0,
     selectedAnswer: null,
-    questionTimer: 24,
+    questionTimerOn: null,
     gameOver: false
-  }
-
-  componentDidMount(){
-    this.fetchQuestions()
-    this.fetchAnswers()
   }
 
   fetchQuestions = () => {
@@ -65,8 +60,7 @@ class MainContainer extends Component {
       gameOver: false,
       activeQuestionIndex: 0,
       correctAnswers: 0,
-      selectedAnswer: null,
-      questionTimer: 24,
+      selectedAnswer: null
     })
   }
 
@@ -78,19 +72,6 @@ class MainContainer extends Component {
     } else {
       this.setState({
         countdownTimerOn: false,
-      })
-    }
-  }
-
-  handleQuestionTimer = () => {
-    if (this.state.questionTimer > 0) {
-      this.setState(prevState => ({
-        questionTimer: prevState.questionTimer - 1
-      }))
-    } else {
-      this.incrementQuestionIndex()
-      this.setState({
-        questionTimer: 24
       })
     }
   }
@@ -115,21 +96,26 @@ class MainContainer extends Component {
     if (this.state.activeQuestionIndex < 9){
       this.setState(prevState => ({
         activeQuestionIndex: prevState.activeQuestionIndex+1,
-        questionTimer: 24,
-        selectedAnswer: null
+        selectedAnswer: null,
+        // questionTimerOn: null
       }))
-    } else {
+    } else if (this.state.activeQuestionIndex >= 9){
       this.setState({
         gameOver: true
       })
     }
   }
 
+
   handleSelectedAnswer = (selectedAnswer) => {
-    if (selectedAnswer.correct === true) {
+    console.log("hello");
+    if (selectedAnswer === null){
+      this.incrementQuestionIndex()
+    } else if (selectedAnswer.correct === true && this.state.activeQuestionIndex < 9) {
       this.setState(prevState => ({
         correctAnswers: prevState.correctAnswers+1,
-        selectedAnswer: selectedAnswer
+        selectedAnswer: selectedAnswer,
+        questionTimerOn: null
       }))
     } else {
       this.setState({
@@ -138,7 +124,13 @@ class MainContainer extends Component {
     }
   }
 
+  killQuestionTimer = () => {
+    this.setState({questionTimerOn: false})
+  }
 
+  resetQuestionTimer = () => {
+    this.setState({questionTimerOn: null})
+  }
 
 
   renderContent = () => {
@@ -155,7 +147,12 @@ class MainContainer extends Component {
     } else if (this.state.countdownTimerOn === false && this.state.gameOver === false) {
       return <>
         <Scoreboard correctAnswers={this.state.correctAnswers}/>
-        <QuestionTimer handleQuestionTimer={this.handleQuestionTimer} questionTimer={this.state.questionTimer}/>
+        <QuestionTimer
+          selectedAnswer={this.state.selectedAnswer}
+          incrementQuestionIndex={this.incrementQuestionIndex}
+          handleSelectedAnswer={this.handleSelectedAnswer}
+          killQuestionTimer={this.killQuestionTimer}
+          resetQuestionTimer={this.resetQuestionTimer}/>
         <QuestionModal
           questions={this.state.questions}
           answers={this.state.answers}
@@ -163,7 +160,7 @@ class MainContainer extends Component {
           incrementQuestionIndex={this.incrementQuestionIndex}
           handleSelectedAnswer={this.handleSelectedAnswer}
           selectedAnswer={this.state.selectedAnswer}
-          questionTimer={this.state.questionTimer}/>
+          questionTimerOn={this.state.questionTimerOn}/>
         <QuestionCounter activeQuestionIndex={this.state.activeQuestionIndex} questions={this.state.questions}/>
       </>
     } else if (this.state.gameOver === true) {
@@ -173,6 +170,7 @@ class MainContainer extends Component {
 
 
   render(){
+    console.log("main container rendering");
     return (
       <div className="main-container-div">
         {this.renderContent()}

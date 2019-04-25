@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Question from './Question.js'
 import AnswerChoice from './AnswerChoice';
 
-const QuestionModal = ( {questions, answers, activeQuestionIndex, incrementQuestionIndex, handleSelectedAnswer, selectedAnswer} ) => {
+const QuestionModal = ( {questions, answers, activeQuestionIndex, incrementQuestionIndex, handleSelectedAnswer, selectedAnswer, questionTimerOn} ) => {
 
   const filteredAnswers = answers.answers.filter(answer => {
     return answer.question_id === questions[activeQuestionIndex].id
@@ -13,7 +13,8 @@ const QuestionModal = ( {questions, answers, activeQuestionIndex, incrementQuest
       answerChoice={answerChoice}
       incrementQuestionIndex={incrementQuestionIndex}
       handleSelectedAnswer={handleSelectedAnswer}
-      selectedAnswer={selectedAnswer}/>
+      selectedAnswer={selectedAnswer}
+      questionTimerOn={questionTimerOn}/>
   })
 
   const question = questions[activeQuestionIndex]
