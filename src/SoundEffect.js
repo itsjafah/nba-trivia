@@ -20,10 +20,9 @@ class SoundEffect extends Component {
       <Sound
         url={this.url()}
         playStatus={Sound.status.PLAYING}
-        playFromPosition={1000 /* in milliseconds */}
-        onLoading={this.handleSongLoading}
-        onPlaying={this.handleSongPlaying}
-        onFinishedPlaying={this.handleSongFinishedPlaying}
+        playFromPosition={0 /* in milliseconds */}
+        volume={50}
+        playbackRate={2}
       />
     )
 

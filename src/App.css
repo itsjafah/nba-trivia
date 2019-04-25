@@ -38,7 +38,7 @@
 .play-button-div {
   text-align: center;
   margin-top: 20px;
-  animation: 3s ease 0s normal forwards 1 fadein;
+  animation: 4s ease 0s normal forwards 1 fadein;
   /* border: 1px blue solid; */
 }
 

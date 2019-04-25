@@ -18,18 +18,15 @@ class QuestionTimer extends Component {
 
   handleQuestionTimer = () => {
     if (this.state.questionTimer > 0 && this.props.selectedAnswer === null) {
-      this.props.resetQuestionTimer()
       this.setState(prevState => ({
         questionTimer: prevState.questionTimer - 1,
       }))
     } else if (this.state.questionTimer > 0 && this.props.selectedAnswer !== null){
-      this.props.resetQuestionTimer()
       this.setState({
         questionTimer: 10
       })
     }
     else if (this.state.questionTimer === 0){
-      this.props.killQuestionTimer()
       this.props.handleSelectedAnswer(null)
       this.setState({
         questionTimer: 10
