@@ -9,7 +9,9 @@ class SoundEffect extends Component {
     } else if (this.props.playClicked === true && this.props.selectedAnswer === null){
       return null
     } else if (this.props.selectedAnswer.correct === true){
-      return "cheers-correct-answer.mp3"
+      return "Swish.mp3"
+    } else if (this.props.selectedAnswer.correct === false){
+      return "Backboard.mp3"
     }
   }
 
@@ -22,7 +24,7 @@ class SoundEffect extends Component {
         playStatus={Sound.status.PLAYING}
         playFromPosition={0 /* in milliseconds */}
         volume={50}
-        playbackRate={2}
+        playbackRate={1}
       />
     )
 

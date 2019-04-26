@@ -9,7 +9,6 @@ import GameOver from './GameOver'
 import QuestionCounter from './QuestionCounter'
 import SoundEffect from './SoundEffect';
 import logo from './nba-logo-vector-01.png';
-const NBA = require("nba");
 
 
 // const QUESTIONS_API = `https://whispering-reef-74520.herokuapp.com/questions`

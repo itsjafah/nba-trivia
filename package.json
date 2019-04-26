@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "nba": "^4.5.0",
+    "radium": "^0.25.1",
     "react": "^16.8.4",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8",
     "react-sound": "^1.2.0",
-    "serve": "^11.0.0"
+    "serve": "^11.0.0",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

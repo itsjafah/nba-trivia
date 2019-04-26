@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import Question from './Question.js'
 import AnswerChoice from './AnswerChoice';
+import Radium, { StyleRoot } from 'radium';
+import { bounceInDown } from 'react-animations'
+
+const styles = {
+  bounceInDown: {
+    animation: 'x 1.5s',
+    animationName: Radium.keyframes(bounceInDown, 'bounceInDown')
+  }
+}
 
 const QuestionModal = ( {questions, answers, activeQuestionIndex, incrementQuestionIndex, handleSelectedAnswer, selectedAnswer, questionTimerOn} ) => {
 
@@ -19,14 +28,15 @@ const QuestionModal = ( {questions, answers, activeQuestionIndex, incrementQuest
 
   const question = questions[activeQuestionIndex]
 
-
     return (
-      <div className="question-modal-wrapper">
-          <Question question={question}/>
-        <div className="answer-choices-div">
-          {answerChoice}
+      <StyleRoot>
+        <div className="question-modal-wrapper" style={styles.bounceInDown}>
+            <Question question={question}/>
+          <div className="answer-choices-div">
+            {answerChoice}
+          </div>
         </div>
-      </div>
+      </StyleRoot>
     )
 
 }
