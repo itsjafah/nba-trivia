@@ -6,7 +6,7 @@ import { bounceInDown } from 'react-animations'
 
 const styles = {
   bounceInDown: {
-    animation: 'x 1.5s',
+    animation: '1.5s',
     animationName: Radium.keyframes(bounceInDown, 'bounceInDown')
   }
 }
