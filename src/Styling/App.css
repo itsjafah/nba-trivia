@@ -11,7 +11,6 @@
 .app::after {
   content: "";
   background: url("../Images/basketball-court-copy-2.png");
-
   position: absolute;
   mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
   z-index: -1;
@@ -28,10 +27,7 @@
 /* MAINCONTAINER */
 
 .main-container-div {
-  /* position: relative; */
-  /* top: 3vh; */
   margin-top: 2vh;
-  width: 100%;
   border: 1px red solid
 }
 
@@ -114,16 +110,16 @@
 
 .question-modal-wrapper {
   /* display: flex, inline-grid; */
-  text-align: center;
-  margin-left: 30%;
-  margin-right: 30%;
-  position: relative;
-  top: 40vh;
+  /* text-align: center; */
+  width: 40%;
+  margin: auto;
+  margin-top: 10vh;
+  height: 60vh;
   border: 2px grey solid;
   border-radius: 0.3em;
   z-index: 1;
   box-shadow: 0 30px 20px 0px rgba(0,0,0,.1), 0 30px 20px 0 rgba(0,0,0,.1);
-background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 }
 
 
@@ -131,13 +127,18 @@ background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 
 .question {
   /* border: 1px black solid; */
-  height: 60px;
-  font-size: 25px;
+  height: 80px;
+  font-size: 40px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
   justify-content: center;
+  text-align: center;
+  padding: 0px 10px;
 }
 
 
@@ -145,23 +146,17 @@ background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 
 .answer-choices-div {
   display: grid;
-  position: relative;
   height: 60%;
-  margin-bottom: 30px
-  /* border: 2px green solid; */
+  margin-top: 50px
 }
 
 .answer-choice-button {
-  font-size: 20px;
+  font-size: 25px;
   box-shadow: 0 0 16px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1);
   border-radius: .3em;
-  margin-top: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-left: 50px;
-  margin-right: 50px;
+  padding: 5px 0px;
+  margin: 0px 50px 5px;
   outline: 0;
-  /* border: 1px yellow solid; */
 }
 
 .answer-choice-button:hover {
@@ -174,29 +169,23 @@ background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 }
 
 .correct-answer-choice-button {
-  font-size: 20px;
+  font-size: 25px;
   box-shadow: 0 0 16px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1);
   border-radius: .3em;
-  margin-top: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-left: 50px;
-  margin-right: 50px;
+  padding: 5px 0px;
+  margin: 0px 50px 5px;
   outline: 0;
   animation: blinker 0.6s linear infinite;
   animation-delay: 0.2s
 }
 
 .correct-answer-choice-button-selected {
-  font-size: 20px;
+  font-size: 25px;
   box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
   background-color: #4caf50;
   border-radius: 0.3em;
-  margin-top: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-left: 50px;
-  margin-right: 50px;
+  padding: 5px 0px;
+  margin: 0px 50px 5px;
   outline: 0;
 }
 
@@ -225,8 +214,8 @@ background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 
 .scoreboard-div {
   float: left;
-  margin-top: 30px;
-  margin-left: 180px;
+  margin-top: 2%;
+  margin-left: 10%;
   /* border: 2px green solid; */
 }
 
@@ -249,8 +238,8 @@ background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 
 .question-timer-div {
   float: right;
-  margin-top: 30px;
-  margin-right: 180px;
+  margin-top: 2%;
+  margin-right: 10%;
 }
 
 .question-timer-header {

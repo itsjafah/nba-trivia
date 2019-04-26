@@ -116,15 +116,6 @@ class MainContainer extends Component {
     }
   }
 
-  killQuestionTimer = () => {
-    this.setState({questionTimerOn: false})
-  }
-
-  resetQuestionTimer = () => {
-    this.setState({questionTimerOn: null})
-  }
-
-
   renderContent = () => {
     if (this.state.playClicked === false) {
       return <>
@@ -142,9 +133,7 @@ class MainContainer extends Component {
         <QuestionTimer
           selectedAnswer={this.state.selectedAnswer}
           incrementQuestionIndex={this.incrementQuestionIndex}
-          handleSelectedAnswer={this.handleSelectedAnswer}
-          killQuestionTimer={this.killQuestionTimer}
-          resetQuestionTimer={this.resetQuestionTimer}/>
+          handleSelectedAnswer={this.handleSelectedAnswer}/>
         <QuestionModal
           questions={this.state.questions}
           answers={this.state.answers}
@@ -162,7 +151,6 @@ class MainContainer extends Component {
 
 
   render(){
-    console.log("main container rendering");
     return (
       <div className="main-container-div">
         {this.renderContent()}
@@ -172,7 +160,6 @@ class MainContainer extends Component {
       </div>
     )
   }
-
 
 }
 
