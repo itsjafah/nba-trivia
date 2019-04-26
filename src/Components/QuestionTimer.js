@@ -36,8 +36,6 @@ class QuestionTimer extends Component {
 
   render(){
 
-    console.log(this.props);
-
     const className = () => {
       if (this.state.questionTimer <= 5) {
         return "question-timer-low"

@@ -10,7 +10,7 @@
 
 .app::after {
   content: "";
-  background: url("./basketball-court-copy-2.png");
+  background: url("../Images/basketball-court-copy-2.png");
 
   position: absolute;
   mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
@@ -122,8 +122,8 @@
   border: 2px grey solid;
   border-radius: 0.3em;
   z-index: 1;
-  background-color: tan;
   box-shadow: 0 30px 20px 0px rgba(0,0,0,.1), 0 30px 20px 0 rgba(0,0,0,.1);
+background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 }
 
 

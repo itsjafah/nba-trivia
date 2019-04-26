@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import logo from './nba-logo-vector-01.png';
+import '../Styling/App.css';
+import logo from '../Images/nba-logo-vector-01.png';
 
 class NbaLogo extends Component {
 
@@ -11,7 +11,7 @@ class NbaLogo extends Component {
           <img src={logo} className="nba-logo"/>
         </div>
         <div className="welcome-message">
-          Welcome to the NBA Trivia App!
+          Welcome to NBA Trivia!
         </div>
       </div>
     )

@@ -8,15 +8,10 @@ import QuestionTimer from './QuestionTimer'
 import GameOver from './GameOver'
 import QuestionCounter from './QuestionCounter'
 import SoundEffect from './SoundEffect';
-import logo from './nba-logo-vector-01.png';
 
 
-// const QUESTIONS_API = `https://whispering-reef-74520.herokuapp.com/questions`
-// const ANSWERS_API = `https://whispering-reef-74520.herokuapp.com/answers`
-
-
-const QUESTIONS_API = `http://localhost:3000/questions`
-const ANSWERS_API = `http://localhost:3000/answers`
+const QUESTIONS_API = `https://whispering-reef-74520.herokuapp.com/questions`
+const ANSWERS_API = `https://whispering-reef-74520.herokuapp.com/answers`
 
 class MainContainer extends Component {
 
@@ -95,8 +90,7 @@ class MainContainer extends Component {
     if (this.state.activeQuestionIndex < 9){
       this.setState(prevState => ({
         activeQuestionIndex: prevState.activeQuestionIndex+1,
-        selectedAnswer: null,
-        // questionTimerOn: null
+        selectedAnswer: null
       }))
     } else if (this.state.activeQuestionIndex >= 9){
       this.setState({
@@ -107,7 +101,6 @@ class MainContainer extends Component {
 
 
   handleSelectedAnswer = (selectedAnswer) => {
-    console.log("hello");
     if (selectedAnswer === null){
       this.incrementQuestionIndex()
     } else if (selectedAnswer.correct === true && this.state.activeQuestionIndex < 9) {
@@ -173,7 +166,9 @@ class MainContainer extends Component {
     return (
       <div className="main-container-div">
         {this.renderContent()}
-        <SoundEffect selectedAnswer={this.state.selectedAnswer} playClicked={this.state.playClicked}/>
+        <SoundEffect selectedAnswer={this.state.selectedAnswer} playClicked={this.state.playClicked}
+        gameOver={this.state.gameOver}
+        correctAnswers={this.state.correctAnswers}/>
       </div>
     )
   }
