@@ -33,7 +33,7 @@
 
 .play-button-div {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
   animation: 4s ease 0s normal forwards 1 fadein;
   /* border: 1px blue solid; */
 }
@@ -71,6 +71,7 @@
 
 .nba-logo-container {
   text-align: center;
+  margin-top: 15px;
 }
 
 .nba-logo {
@@ -80,7 +81,7 @@
 }
 
 .welcome-message {
-  margin-top: 10px;
+  margin-top: 25px;
   font-size: 35px;
   font-weight: bold;
   animation: 1.8s ease 0s normal forwards 1 fadein;
@@ -93,7 +94,7 @@
   display: grid;
   place-items: center;
   position: relative;
-  top: 10vh;
+  top: 15vh;
 }
 
 .countdown-timer {
@@ -102,15 +103,13 @@
 }
 
 .jump-ball {
-  font-size: 100px;
+  font-size: 120px;
   font-weight: bold
 }
 
 /* QUESTIONCONTAINER */
 
 .question-modal-wrapper {
-  /* display: flex, inline-grid; */
-  /* text-align: center; */
   width: 40%;
   margin: auto;
   margin-top: 10vh;
@@ -197,15 +196,12 @@
 }
 
 .incorrect-answer-choice-button {
-  font-size: 20px;
+  font-size: 25px;
   box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
   background-color: red;
   border-radius: 0.3em;
-  margin-top: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-left: 50px;
-  margin-right: 50px;
+  padding: 5px 0px;
+  margin: 0px 50px 5px;
   outline: 0
 }
 
@@ -214,13 +210,13 @@
 
 .scoreboard-div {
   float: left;
-  margin-top: 2%;
+  margin-top: 4.5%;
   margin-left: 10%;
   /* border: 2px green solid; */
 }
 
 .your-score-header {
-  font-size: 35px;
+  font-size: 50px;
   font-weight: bold;
   margin-bottom: 5px;
   display: flex;
@@ -228,7 +224,7 @@
 }
 
 .your-score {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   text-align: center;
   animation: 2s ease 0s normal forwards 1 fadein;
@@ -238,12 +234,12 @@
 
 .question-timer-div {
   float: right;
-  margin-top: 2%;
+  margin-top: 4.5%;
   margin-right: 10%;
 }
 
 .question-timer-header {
-  font-size: 35px;
+  font-size: 50px;
   font-weight: bold;
   margin-bottom: 5px;
   display: flex;
@@ -251,17 +247,15 @@
 }
 
 .question-timer {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
-  font-family: 'Orbitron', sans-serif;
   text-align: center;
   animation: 2s ease 0s normal forwards 1 fadein;
 }
 
 .question-timer-low {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
-  font-family: 'Orbitron', sans-serif;
   text-align: center;
   color: red
 }
@@ -273,10 +267,13 @@
   position: relative;
   display: inline-block;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   text-align: center;
-  font-size: 20px;
-  top: 4vh
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 2%;
+  animation: 2s ease 0s normal forwards 1 fadein;
 }
 
 
@@ -289,7 +286,7 @@
 }
 
 .game-over-header {
-  font-size: 65px;
+  font-size: 75px;
   font-weight: bold;
   text-align: center;
 }
@@ -297,13 +294,10 @@
 .play-again-button {
   box-shadow: 0 0px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
   border-radius: 0.3em;
-  font-size: 25px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-top: 55px;
-  outline:0;
+  font-size: 36px;
+  padding: 10px 30px 10px 30px;
+  margin-top: 110px;
+  outline: 0;
 }
 
 .play-again-button:hover {
